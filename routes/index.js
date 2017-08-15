@@ -15,11 +15,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/user/signup', function(req, res, next) {
-  res.render('user/signup', {csurfToken: req.csrfToken()});
+  res.render('user/signup', {csrfToken: req.csrfToken()});
 });
 
 router.post('/user/signup', function(req, res, next) {
   res.redirect('/');
-})
+});
+
 
 module.exports = router;
