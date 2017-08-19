@@ -1,24 +1,12 @@
 .thumbnail img {
-  max-height: 150px;
- }
- 
- .thumbnail .description {
-   color: #7f7f7f;
- }
- 
- .price{
-   font-weight: bold;
-   font-size: 16px;
- }
-    @media only screen and (min-width:800px) {
-    .thumbnail{
-      margin-left:40px;
-    }  
-  
- }
-  @media only screen and (min-width:1200px) {
-  .thumbnail{
-    margin-top: 10px;
-    margin-left: 85px;
-  } 
-}  
+    max-height: 150px;
+}
+
+.thumbnail .description {
+    color: #7f7f7f;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}

@@ -2,52 +2,46 @@ var Product = require('../models/product');
 
 var mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/shopping', { useMongoClient: true });
+mongoose.connect('localhost:27017/shopping');
 
-var products = [new Product({
-        imagePath: 'https://www.callofduty.com//content/dam/atvi/callofduty/wwii/home/wwii-fb-eyes-logo-pic.jpg',
-        title: 'Call of Duty WW2',
-        description: 'First Person Shooter!!!',
-        price: 15
+var products = [
+    new Product({
+        imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
+        title: 'Gothic Video Game',
+        description: 'Awesome Game!!!!',
+        price: 10
     }),
     new Product({
-        imagePath: 'http://cdn.pcwallart.com/images/max-payne-3-wallpaper-4.jpg',
-        title: 'Max Payne 3',
-        description: 'Third Person Shooter!!!',
+        imagePath: 'http://eu.blizzard.com/static/_images/games/wow/wallpapers/wall2/wall2-1440x900.jpg',
+        title: 'World of Warcraft Video Game',
+        description: 'Also awesome? But of course it was better in vanilla ...',
         price: 20
     }),
     new Product({
-        imagePath: 'http://www.tsbgamers.org/wp-content/uploads//2016/06/store_image_02.png',
-        title: 'Counter Strike : Global Offensive',
-        description: 'First Person Shooter!!!',
-        price: 25
-    }),
-    new Product({
-        imagePath: 'https://i.ytimg.com/vi/fNC66njKCV8/maxresdefault.jpg',
-        title: 'Need For Speed - Most Wanted',
-        description: 'Racing!!!',
-        price: 17
-    }),
-    new Product({
-        imagePath: 'http://ll-c.ooyala.com/e1/FxZnluYjE6hEoFHu02TdwQqWA8tlkcwv/promo322349625',
-        title: 'Grand Theft Auto V',
-        description: 'Action-Adventure!!!',
+        imagePath: 'https://support.activision.com/servlet/servlet.FileDownload?file=00PU000000Rq6tz',
+        title: 'Call of Duty Video Game',
+        description: 'Meh ... nah, it\'s okay I guess',
         price: 40
     }),
     new Product({
-        imagePath: 'http://images.performgroup.com/di/library/sporting_news/81/df/pro-evolution-soccer-2017_isrooi069kfi1709d8m5n9l90.jpg?t=855964271',
-        title: 'Pro Evolution Soccer 2017',
-        description: 'Sports!!!',
-        price: 23
+        imagePath: 'https://pmcdeadline2.files.wordpress.com/2014/02/minecraft__140227211000.jpg',
+        title: 'Minecraft Video Game',
+        description: 'Now that is super awesome!',
+        price: 15
+    }),
+    new Product({
+        imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
+        title: 'Dark Souls 3 Video Game',
+        description: 'I died!',
+        price: 50
     })
-]
+];
 
 var done = 0;
-for(var i = 0; i < products.length; i++) {
+for (var i = 0; i < products.length; i++) {
     products[i].save(function(err, result) {
         done++;
-        if(done === products.length) {
+        if (done === products.length) {
             exit();
         }
     });

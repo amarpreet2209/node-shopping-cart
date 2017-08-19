@@ -1,11 +1,10 @@
-Stripe.setPublishableKey('pk_test_d2wqDs1fJNJcGz5vfRWQtkg8');
+Stripe.setPublishableKey('pk_test_zw8FoviKyC27rl5eWRQSmc2F');
 
 var $form = $('#checkout-form');
 
 $form.submit(function (event) {
     $('#charge-error').addClass('hidden');
     $form.find('button').prop('disabled', true);
-
     Stripe.card.createToken({
         number: $('#card-number').val(),
         cvc: $('#card-cvc').val(),
